@@ -36,6 +36,8 @@ void Sapphire::Cell::addActor( Entity::ActorPtr pAct )
   if( pAct->isPlayer() )
     ++m_playerCount;
 
+  Logger::debug( "Adding {0} to cell {1}/{2}", pAct->getId(), m_posX, m_posY );
+
   m_actors.insert( pAct );
 }
 
@@ -44,6 +46,7 @@ void Sapphire::Cell::removeActor( Entity::ActorPtr pAct )
   if( pAct->isPlayer() )
     --m_playerCount;
 
+  Logger::debug( "Removing {0} from cell {1}/{2}", pAct->getId(), m_posX, m_posY );
   m_actors.erase( pAct );
 }
 
